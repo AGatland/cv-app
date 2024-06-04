@@ -1,8 +1,22 @@
+  .header {
+    padding-top: 10px;
+    background-color: white;
+  }
+
+  .headerScrolled {
+    background-color: var(--mantine-color-body);
+    border-bottom: rem(1px) solid light-dark(var(--mantine-color-gray-3), var(--mantine-color-dark-4));
+  }
+  
   .inner {
     height: rem(56px);
     display: flex;
     justify-content: space-between;
     align-items: center;
+  }
+
+  .logo {
+    height: 100%;
   }
   
   .link {

@@ -13,12 +13,12 @@ function App() {
   return (
     <MantineProvider defaultColorScheme='dark' theme={theme}>
       <AppShell header={classes.header}>
-        <AppShell.Header>
-          <Header />
+        <AppShell.Header style={{border: "0"}}>
+          <Header/>
         </AppShell.Header>
         <AppShell.Main>
           <Routes>
-            <Route path='/' element={<div style={{height: "3000px"}}/>} />
+            <Route path='/' element={<div style={{height: "3000px", backgroundColor: "white"}}/>} />
           </Routes>
         </AppShell.Main>
       </AppShell>
