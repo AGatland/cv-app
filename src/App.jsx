@@ -1,7 +1,8 @@
-import './App.css'
+import classes from './App.module.css'
 import '@mantine/core/styles.css';
-import { MantineProvider, createTheme } from '@mantine/core';
+import { AppShell, MantineProvider, createTheme } from '@mantine/core';
 import { Route, Routes } from 'react-router-dom';
+import Header from './components/Header';
 
 const theme = createTheme({
   /** Put your mantine theme override here */
@@ -10,12 +11,19 @@ const theme = createTheme({
 function App() {
 
   return (
-    <MantineProvider theme={theme}>
-      <Routes>
-        <Route path='/' element={<div />} />
-      </Routes>
+    <MantineProvider defaultColorScheme='dark' theme={theme}>
+      <AppShell header={classes.header}>
+        <AppShell.Header>
+          <Header />
+        </AppShell.Header>
+        <AppShell.Main>
+          <Routes>
+            <Route path='/' element={<div style={{height: "3000px"}}/>} />
+          </Routes>
+        </AppShell.Main>
+      </AppShell>
     </MantineProvider>
   )
 }
 
-export default App
+export { App }
