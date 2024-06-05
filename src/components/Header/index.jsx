@@ -1,10 +1,11 @@
-import { Group, Container, useMantineColorScheme } from '@mantine/core';
+import { Group, Container, useMantineColorScheme, ActionIcon } from '@mantine/core';
 import classes from './styles.module.css';
 import ColorSchemeButton from './colorSchemeButton';
 import { Link } from 'react-router-dom';
 import assetLogoDark from '../../assets/logoDark.svg'
 import assetLogoLight from '../../assets/logoLight.svg'
 import { useEffect, useState } from 'react';
+import { IconBrandLinkedin } from '@tabler/icons-react';
 
 export default function Header() {
     const { colorScheme } = useMantineColorScheme();
@@ -35,7 +36,10 @@ export default function Header() {
             <Link to={"/"} className={classes.link}>Skills</Link>
             <Link to={"/"} className={classes.link}>Projects</Link>
           </Group>
-          <ColorSchemeButton />
+          <Group>
+            <ActionIcon size="xl" component="a" target='_blank' href="https://www.linkedin.com/in/alexander-gatland/"> <IconBrandLinkedin size="40" /></ActionIcon>
+            <ColorSchemeButton />
+          </Group>
         </div>
       </Container>
     </div>

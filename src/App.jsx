@@ -19,9 +19,11 @@ function App() {
           <Header/>
         </AppShell.Header>
         <AppShell.Main style={{backgroundImage: `url(${assetBg})`}}>
-          <Routes>
-            <Route path='/' element={<Cvpage />} />
-          </Routes>
+          <div className={classes.mainBody}>
+            <Routes>
+              <Route path='/' element={<Cvpage />} />
+            </Routes>
+          </div>
         </AppShell.Main>
       </AppShell>
     </MantineProvider>

@@ -1,9 +1,10 @@
+import { Container } from "@mantine/core";
 
 export default function Education() {
 
     return (
-        <div>
-            
-        </div>
+        <Container>
+            <h1>Projects</h1>
+        </Container>
     )
 }
