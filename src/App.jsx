@@ -7,7 +7,6 @@ import Cvpage from './cvpage';
 import Footer from './components/Footer';
 
 const theme = createTheme({
-  /** Put your mantine theme override here */
 });
 
 function App() {
