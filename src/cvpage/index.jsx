@@ -15,14 +15,16 @@ export default function Cvpage() {
     <Flex
         direction={"column"}
     >
-        <div className={classes.startContainer} style={{backgroundImage: `url(${colorScheme == "dark" ? assetBgDark : assetBgLight})`, backgroundSize: "cover"}}>
+        <div id='overview' className={classes.startContainer} style={{backgroundImage: `url(${colorScheme == "dark" ? assetBgDark : assetBgLight})`, backgroundSize: "cover"}}>
             <Intro />
             <Skills />
             <br /><br />
             <Certifications />
         </div>
-        <Projects />
-        <div className={classes.endContainer} style={{backgroundImage: `url(${colorScheme == "dark" ? assetBgDark : assetBgLight})`}}>
+        <div id='projects'>
+          <Projects/>
+        </div>
+        <div id='workexperience' className={classes.endContainer} style={{backgroundImage: `url(${colorScheme == "dark" ? assetBgDark : assetBgLight})`}}>
             <WorkExperience />
         </div>
     </Flex>

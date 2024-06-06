@@ -1,7 +1,6 @@
 import { Group, Container, useMantineColorScheme, ActionIcon } from '@mantine/core';
 import classes from './styles.module.css';
 import ColorSchemeButton from './colorSchemeButton';
-import { Link } from 'react-router-dom';
 import assetLogoDark from '../../assets/logoDark.svg'
 import assetLogoLight from '../../assets/logoLight.svg'
 import { useEffect, useState } from 'react';
@@ -34,9 +33,9 @@ export default function Header() {
         <div className={classes.inner}>
           <img src={colorScheme == "dark" ? assetLogoDark : assetLogoLight} alt="Logo" className={classes.logo} />
           <Group gap={5} visibleFrom="sm">
-            <Link to={"/"} className={classes.link}>Overview</Link>
-            <Link to={"/"} className={classes.link}>Skills</Link>
-            <Link to={"/"} className={classes.link}>Projects</Link>
+            <a href="#overview" className={classes.link}>Overview</a>
+            <a href="#projects" className={classes.link}>Projects</a>
+            <a href="#workexperience" className={classes.link}>Work Experience</a>
           </Group>
           <Group>
             <ActionIcon size="xl" component="a" target='_blank' href="https://www.linkedin.com/in/alexander-gatland/"> <IconBrandLinkedin size="40" /></ActionIcon>
