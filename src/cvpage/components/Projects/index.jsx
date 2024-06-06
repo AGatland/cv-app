@@ -2,9 +2,10 @@ import { Center, Container, Grid, Text, Title } from "@mantine/core";
 import ProjectCard from "./ProjectCard";
 import classes from './styles.module.css';
 import { IconBrandAngular, IconBrandAzure, IconBrandCSharp, IconBrandDocker, IconBrandFirebase, IconBrandGithub, IconBrandGolang, IconBrandJavascript, IconBrandMysql, IconBrandNodejs, IconBrandPython, IconBrandReact, IconBrandTypescript, IconBrandUnity, IconWebhook } from "@tabler/icons-react";
+import { useState } from "react";
+import ProjectDetails from "./ProjectDetails";
 
-const projEx = {
-    objects: [
+const projEx = [
       {
         employer: "Posten Bring",
         title: "Summer of PAPP",
@@ -20,7 +21,7 @@ const projEx = {
       {
         employer: "Boolean UK",
         title: "Bob's Beagles",
-        topic: "",
+        topic: "Forskning, utdanning og undervisning",
         description: "Under upskill-perioden med Boolean UK arbeidet Alexander sammen med Marit og Nora for å utvikle et e-handelsnettsted for kjæledyrprodukter. Prosjektet ble utført ved hjelp av Java Spring Boot for backenden, med integrasjon av Spring Security ved bruk av JWT for autentisering og Spring JPA Data for databasestyring. Frontenden ble utviklet med React, og Mantine-biblioteker ble benyttet for å bygge et brukervennlig grensesnitt.\n"+
    
         "For databaseløsning benyttet teamet Postgres, og hele applikasjonen ble versjonskontrollert gjennom Git og organisert med GitHub Projects. Utviklingsarbeidet foregikk i egne branches, og kode sammenslåinger til hovedgrenen ble nøye gjennomgått gjennom pull requests og kodegjennomganger for å sikre høy kvalitet og konsistens i koden. En gruppelederrolle, som ble rullert blant teammedlemmene, hadde ansvar for å gjennomgå og merge disse pull requestene.\n"+
@@ -48,7 +49,7 @@ const projEx = {
         description: 'Konsulenten jobbet med et team for å utvikle et 2D-overlevelsesspill med en unik tilnærming. Spillet tilbød spillere en top-down synsvinkel, som tillot 360-graders bevegelse mens de navigerte gjennom genererte baner og bekjempet fiender. For å gi en variert opplevelse ble banene automatisk generert, og spillerne unngikk å møte på samme nivå flere ganger. I spilletantok spilleren rollen som en trollmann med angrepsevnen til å kaste en flammekule. Det ble implementert ulike "items" som kunne plukkes opp og ga spilleren fordeler, for eksempel økt hastighet eller økt skade. Teamet jobbet også med å utvikle diverse fiender som hadde forskjellige angrepsmønstre og bevegelsesmønstre for å øke spillbarheten. Hele prosjektet ble utviklet i Unity-plattformen ved bruk av C#. Konsulentens hovedoppgave var utviklingen av "items" og "Boss"-fiender. Disse "Boss"- fiendene hadde unike og et bredere utvalg av bevegelsesmønstre, angrep og animasjoner.'
       }
     ]
-  }
+  
 
 const projExPre = [
         {
@@ -97,14 +98,13 @@ const projExPre = [
 
 
 export default function Projects() {
+    const [ selectedCard, setSelectedCard ] = useState(-1)
 
     const ProjectCards = projExPre.map((object, index) => (
-            <Grid.Col key={index} span={{sm: 6, md: 4, lg: 4, xl: 4}} className={classes.equalHeightCards}>
+            <Grid.Col key={index} span={{sm: 6, md: 4, lg: 4, xl: 4}} className={classes.equalHeightCards} onClick={() => setSelectedCard(index)}>
                 <ProjectCard projEx={object} />
             </Grid.Col>
             ))
-        
-    
 
     return (
       <div className={classes.projectsBoxContainer}>
@@ -114,9 +114,11 @@ export default function Projects() {
                 <Text className={classes.text}>Prosjekter jeg har jobbet på gjennom studiet, under kurs og i jobberfaringer.</Text>
                 <Text className={classes.text}>Klikk på kortet for å se mer detaljer</Text>
             </Center>
-            <Grid>
-                {ProjectCards}
-            </Grid>
+            {selectedCard >= 0 ? <ProjectDetails data={projEx[selectedCard]} setSelectedCard={setSelectedCard} /> : 
+              <Grid>
+                  {ProjectCards}
+              </Grid>
+            }
         </Container>
       </div>
     )

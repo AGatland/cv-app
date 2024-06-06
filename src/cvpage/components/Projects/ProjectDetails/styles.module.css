@@ -1,0 +1,32 @@
+.skillsContainer {
+    border-radius: var(--mantine-radius-lg);
+    background-color: light-dark(var(--mantine-color-gray-2), var(--mantine-color-dark-9));
+}
+
+.text {
+    color: light-dark(var(--mantine-color-gray-7), var(--mantine-color-dark-2));
+    font-size: var(--mantine-font-size-md);
+    font-weight: 500;
+}
+
+.title {
+    color: light-dark(var(--mantine-color-gray-8), var(--mantine-color-dark-0));
+    font-weight: 500;
+}
+
+.title1 {
+    color: light-dark(var(--mantine-color-gray-8), var(--mantine-color-dark-0));
+    font-weight: 500;
+    display: inline;
+}
+
+.title2 {
+    font-weight: 500;
+    display: inline;
+    color: light-dark(var(--mantine-color-gray-7), var(--mantine-color-dark-2));
+}
+
+.projectInfo {
+    flex-direction: column;
+    padding-bottom: rem(60px);
+}
