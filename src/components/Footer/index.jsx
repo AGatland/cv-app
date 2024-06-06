@@ -14,11 +14,11 @@ export default function Footer() {
         <img src={colorScheme == "dark" ? assetLogoDark : assetLogoLight} alt="Logo" className={classes.logo} />
         <Group gap={0} className={classes.links} justify="flex-end" wrap="nowrap">
           <Title order={4}>This Repo: </Title>
-          <ActionIcon size="lg" color="gray" variant="subtle">
+          <ActionIcon size="lg" color="gray" variant="subtle" component="a" target='_blank' href="https://github.com/AGatland/cv-app">
             <IconBrandGithub size={40} stroke={1.5} />
           </ActionIcon>
           <Title pl={"lg"} order={4}>My Game: </Title>
-          <ActionIcon size="lg" color="gray" variant="subtle">
+          <ActionIcon size="lg" color="gray" variant="subtle" component="a" href="https://game.alexandergatland.no">
             <IconDeviceGamepad size={40} stroke={1.5} />
           </ActionIcon>
         </Group>
