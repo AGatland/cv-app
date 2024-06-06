@@ -1,5 +1,7 @@
-import { Container, Flex, Grid } from "@mantine/core";
+import { Center, Container, Grid, Text, Title } from "@mantine/core";
 import ProjectCard from "./ProjectCard";
+import classes from './styles.module.css';
+import { IconBrandAngular, IconBrandAzure, IconBrandCSharp, IconBrandDocker, IconBrandFirebase, IconBrandGithub, IconBrandGolang, IconBrandJavascript, IconBrandMysql, IconBrandNodejs, IconBrandPython, IconBrandReact, IconBrandTypescript, IconBrandUnity, IconWebhook } from "@tabler/icons-react";
 
 const projEx = {
     objects: [
@@ -39,6 +41,12 @@ const projEx = {
         topic: "Forskning, utdanning og undervisning",
         description: 'Konsulenten utviklet en API som integrerte data fra to separate APIer om Covid-19-tilfeller og tiltak. Målet var å hente spesifikke data fra begge APIene, kombinere dem og lagre resultatet i en egen database. Den resulterende applikasjonen tillot brukeren å få tilgang til informasjon om retningslinjer og smittesituasjonen i forskjellige land. Videre hadde brukeren muligheten til å administrere webhooks, som skulle notifisere den angitte URLen hver gang et spesifikt antall "invocations" ble nådd for et bestemt land. APIen ble implementert ved hjelp av Golang, mens databasen ble satt opp i Firestore.'
       },
+      {
+        employer: "NTNU",
+        title: "Spillprogrammering",
+        topic: "Forskning, utdanning og undervisning",
+        description: 'Konsulenten jobbet med et team for å utvikle et 2D-overlevelsesspill med en unik tilnærming. Spillet tilbød spillere en top-down synsvinkel, som tillot 360-graders bevegelse mens de navigerte gjennom genererte baner og bekjempet fiender. For å gi en variert opplevelse ble banene automatisk generert, og spillerne unngikk å møte på samme nivå flere ganger. I spilletantok spilleren rollen som en trollmann med angrepsevnen til å kaste en flammekule. Det ble implementert ulike "items" som kunne plukkes opp og ga spilleren fordeler, for eksempel økt hastighet eller økt skade. Teamet jobbet også med å utvikle diverse fiender som hadde forskjellige angrepsmønstre og bevegelsesmønstre for å øke spillbarheten. Hele prosjektet ble utviklet i Unity-plattformen ved bruk av C#. Konsulentens hovedoppgave var utviklingen av "items" og "Boss"-fiender. Disse "Boss"- fiendene hadde unike og et bredere utvalg av bevegelsesmønstre, angrep og animasjoner.'
+      }
     ]
   }
 
@@ -47,34 +55,51 @@ const projExPre = [
           employer: "Posten Bring",
           title: "Summer of PAPP",
           topic: "Cloud Infrastructure",
+          shortDesc: "Summer internship hos posten bring",
+          skills: [<Title key={0} order={3}>Java</Title>, <IconBrandTypescript key={1} size={"30"}/>, <IconBrandReact key={2} size={"30"}/>, <Title key={3} order={3}>PostgreSQL</Title>, <Title key={4} order={3}>REST</Title>, <IconBrandGithub key={5} size={"30"}/>, <Title key={6} order={3}>CI/CD</Title>, <IconBrandDocker key={7} size={"30"}/>, <IconBrandAzure key={8} size={"30"}/>]
         },
         {
           employer: "NTNU - eVici",
           title: "Bacheloroppgave",
           topic: "Forskning, utdanning og undervisning",
+          shortDesc: "Bacheloroppgave med ekstern klient",
+          skills: [<IconBrandTypescript key={0} size={"30"}/>, <IconBrandAngular key={1} size={"30"}/>, <IconBrandJavascript key={2} size={"30"}/>, <IconBrandPython key={3} size={"30"}/>, <IconBrandNodejs key={4} size={"30"}/>, <IconBrandFirebase key={5} size={"30"}/>, <Title key={6} order={3}>CI/CD</Title>],
         },
         {
           employer: "Boolean UK",
           title: "Bob's Beagles",
           topic: "Forskning, utdanning og undervisning",
+          shortDesc: "Gruppeprosjekt under Experis Academy sitt upskilling program",
+          skills: [<Title key={0} order={3}>Java</Title>, <IconBrandJavascript key={1} size={"30"}/>, <IconBrandReact key={2} size={"30"}/>, <Title key={3} order={3}>PostgreSQL</Title>, <Title key={4} order={3}>REST</Title>, <IconBrandGithub key={5} size={"30"}/>, <Title key={6} order={3}>CI/CD</Title>, <IconBrandDocker key={7} size={"30"}/>],
         },
         {
           employer: "NTNU",
           title: "Datamodellering og databasesystemer",
           topic: "Forskning, utdanning og undervisning",
+          shortDesc: "Gruppeprosjekt med database modellering og API oppsett",
+          skills: [<IconBrandPython key={0} size={"30"}/>, <IconBrandMysql key={1} size={"30"}/>, <Title key={2} order={3}>REST</Title>],
         },
         {
           employer: "NTNU",
           title: "Cloud Technologies",
           topic: "Forskning, utdanning og undervisning",
+          shortDesc: "Individuelt prosjekt med interaksjon med eskterne APIer",
+          skills: [<IconBrandGolang key={0} size={"30"}/>, <IconBrandFirebase key={1} size={"30"}/>, <Title key={2} order={3}>REST</Title>, <IconWebhook key={3} size={"30"}/>],
         },
+        {
+          employer: "NTNU",
+          title: "Spillprogrammering",
+          topic: "Forskning, utdanning og undervisning",
+          shortDesc: "Gruppeprosjekt med planlegging og utvikling av eget spill",
+          skills: [<IconBrandCSharp key={0} size={"30"}/>, <IconBrandUnity key={1} size={"30"}/>],
+        }
       ]
 
 
 export default function Projects() {
 
     const ProjectCards = projExPre.map((object, index) => (
-            <Grid.Col key={index} span={12} sm={6} md={4} lg={3} xl={3}>
+            <Grid.Col key={index} span={{sm: 6, md: 4, lg: 4, xl: 4}} className={classes.equalHeightCards}>
                 <ProjectCard projEx={object} />
             </Grid.Col>
             ))
@@ -82,10 +107,17 @@ export default function Projects() {
     
 
     return (
-        <Container>
+      <div className={classes.projectsBoxContainer}>
+        <Container className={classes.projectsContainer} pb={"xl"} pt={"xl"}>
+            <Center className={classes.projectsInfo}>
+                <Title className={classes.title}>Projects</Title>
+                <Text className={classes.text}>Prosjekter jeg har jobbet på gjennom studiet, under kurs og i jobberfaringer.</Text>
+                <Text className={classes.text}>Klikk på kortet for å se mer detaljer</Text>
+            </Center>
             <Grid>
                 {ProjectCards}
             </Grid>
         </Container>
+      </div>
     )
 }

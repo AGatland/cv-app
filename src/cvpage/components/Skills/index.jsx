@@ -1,6 +1,6 @@
 import { Center, Container, Flex, Text, Title } from "@mantine/core";
 import classes from './styles.module.css';
-import { IconBrandAngular, IconBrandAws, IconBrandAzure, IconBrandCSharp, IconBrandDocker, IconBrandGithub, IconBrandGolang, IconBrandJavascript, IconBrandMysql, IconBrandPython, IconBrandReact, IconBrandTypescript } from "@tabler/icons-react";
+import { IconBrandAngular, IconBrandAws, IconBrandAzure, IconBrandCSharp, IconBrandDocker, IconBrandFirebase, IconBrandGithub, IconBrandGolang, IconBrandJavascript, IconBrandMysql, IconBrandNodejs, IconBrandPython, IconBrandReact, IconBrandTypescript } from "@tabler/icons-react";
 
 
 export default function Skills() {
@@ -14,7 +14,7 @@ export default function Skills() {
             <Flex
                 justify={"space-around"}
             >
-            <Title>Java</Title><IconBrandCSharp size={"50"}/> <IconBrandPython size={"50"}/> <IconBrandGolang size={"50"}/>
+            <Title>Java</Title><IconBrandCSharp size={"50"}/> <IconBrandPython size={"50"}/> <IconBrandGolang size={"50"}/> <IconBrandNodejs size={"50"}/>
             </Flex>
 
             <Flex
@@ -38,7 +38,7 @@ export default function Skills() {
             <Flex
                 justify={"space-around"}
             >
-            <IconBrandAzure size={"50"}/> <IconBrandAws size={"50"}/>
+            <IconBrandAzure size={"50"}/> <IconBrandAws size={"50"}/> <IconBrandFirebase size={"50"}/>
             </Flex>
             
         </Container>

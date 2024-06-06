@@ -9,7 +9,7 @@ import classes from './styles.module.css';
 export default function Cvpage() {
 
   return (
-    <Flex style={{minHeight: "2000px"}}
+    <Flex
         direction={"column"}
         gap="xl"
     >
