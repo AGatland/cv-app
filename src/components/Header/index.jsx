@@ -5,7 +5,9 @@ import { Link } from 'react-router-dom';
 import assetLogoDark from '../../assets/logoDark.svg'
 import assetLogoLight from '../../assets/logoLight.svg'
 import { useEffect, useState } from 'react';
-import { IconBrandLinkedin } from '@tabler/icons-react';
+import { IconBrandGithub, IconBrandLinkedin } from '@tabler/icons-react';
+import assetBgDark from '../../assets/bgDark.jpg'
+import assetBgLight from '../../assets/bgLight.jpg'
 
 export default function Header() {
     const { colorScheme } = useMantineColorScheme();
@@ -27,7 +29,7 @@ export default function Header() {
     }, [])
 
   return (
-    <div className={scrolled ? classes.headerScrolled : classes.header}>
+    <div className={scrolled ? classes.headerScrolled : classes.header} style={{border: "0", backgroundImage: !scrolled ? `url(${colorScheme == "dark" ? assetBgDark : assetBgLight})` : ""}}>
       <Container size="md">
         <div className={classes.inner}>
           <img src={colorScheme == "dark" ? assetLogoDark : assetLogoLight} alt="Logo" className={classes.logo} />
@@ -38,6 +40,7 @@ export default function Header() {
           </Group>
           <Group>
             <ActionIcon size="xl" component="a" target='_blank' href="https://www.linkedin.com/in/alexander-gatland/"> <IconBrandLinkedin size="40" /></ActionIcon>
+            <ActionIcon size="xl" component="a" target='_blank' href="https://github.com/AGatland"> <IconBrandGithub size="40" /></ActionIcon>
             <ColorSchemeButton />
           </Group>
         </div>

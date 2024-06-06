@@ -27,7 +27,7 @@
     content: "";
     top: 0;
     left: 0;
-    background: linear-gradient(90.21deg, #AA367C -5.91%, #4A2FBD 111.58%);
+    background: linear-gradient(90deg, light-dark(var(--mantine-color-blue-2), var(--mantine-color-pink-8)) -10%, light-dark(var(--mantine-color-blue-5), var(--mantine-color-violet-9)) 110%);
     opacity: 0.85;
     position: absolute;
     width: 100%;

@@ -9,3 +9,13 @@ Text {
     font-size: var(--mantine-font-size-sm);
     font-weight: 500;
 }
+
+.startContainer {
+    padding-top: rem(120px);
+    padding-bottom: rem(60px);
+}
+
+.endContainer {
+    padding-top: rem(60px);
+    padding-bottom: rem(60px);
+}
