@@ -28,7 +28,7 @@ export default function Header() {
     }, [])
 
   return (
-    <div className={scrolled ? classes.headerScrolled : classes.header} style={{border: "0", backgroundImage: !scrolled ? `url(${colorScheme == "dark" ? assetBgDark : assetBgLight})` : ""}}>
+    <div className={scrolled ? classes.headerScrolled : classes.header} style={{border: "0", backgroundImage: !scrolled ? `url(${colorScheme == "dark" ? assetBgDark : assetBgLight})` : "", backgroundSize: "cover"}}>
       <Container size="md">
         <div className={classes.inner}>
           <img src={colorScheme == "dark" ? assetLogoDark : assetLogoLight} alt="Logo" className={classes.logo} />

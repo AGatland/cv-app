@@ -22,7 +22,7 @@ export default function WorkExperience() {
         <Container className={classes.workExContainer} p={"xl"}>
             <Center className={classes.workExInfo} pb={"lg"}>
                 <Title className={classes.title}>Work Experience</Title>
-                <Text className={classes.text}>Områder jeg har opparbeidet meg ekspertise gjennom studiet, kurs og arbeidserfaringer så langt.</Text>
+                
             </Center>
             {workEx.map((job, index) => (
                 <div key={index} style={{paddingBottom: "var(--mantine-radius-lg)"}}>

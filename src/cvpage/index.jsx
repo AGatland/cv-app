@@ -24,7 +24,7 @@ export default function Cvpage() {
         <div id='projects'>
           <Projects/>
         </div>
-        <div id='workexperience' className={classes.endContainer} style={{backgroundImage: `url(${colorScheme == "dark" ? assetBgDark : assetBgLight})`}}>
+        <div id='workexperience' className={classes.endContainer} style={{backgroundImage: `url(${colorScheme == "dark" ? assetBgDark : assetBgLight})`, backgroundSize: "cover"}}>
             <WorkExperience />
         </div>
     </Flex>
